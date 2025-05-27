@@ -47,3 +47,31 @@ INSERT INTO aluno VALUES ('vp3023453','Carlos', 17),
 INSERT INTO aluno (prontuario_al, nome_al, idade)
                 VALUES ('VP13', 'Jurandir', 22);
 -- Podemos colcoar em qualquer ordem, mas precisamos colocar os values na ordem certa do INSERT INTO
+
+-- Deletar todos os dados da tabela aluno:
+DELETE FROM aluno -- apaga todos os alunos da tabela aluno
+
+-- Deletar apenas alunos da tabela aluno com 19 anos
+DELETE FROM aluno
+    WHERE idade = 19;
+SELECT * FROM aluno
+
+-- Atualizar a idade da pessoa com prontuário X:
+UPDATE ALUNO set idade = 666
+    WHERE prontuario_al = 'VP13';
+
+-- Para ordenarmos baseando-se na coluna nome:
+SELECT * FROM aluno ORDER BY nome_al;
+
+-- Para ordenarmos baseando-se na coluna idade:
+SELECT * FROM aluno ORDER BY idade;
+-- Se quisermos em ordem decrescente
+-- Para ordenarmos baseando-se na coluna idade:
+SELECT * FROM aluno ORDER BY idade DESC;
+
+-- Ordenar por nome e idade (o primeiro é o mais importante)
+INSERT INTO aluno VALUES ('vp3024134','Petrov', 20);
+INSERT INTO aluno VALUES ('vp3024124','Pedrone', 21);
+INSERT INTO aluno VALUES ('vp3044124','Pedro', 21);
+INSERT INTO aluno VALUES ('vp3054124','Pedro', 25);
+SELECT * FROM aluno ORDER BY nome_al, idade;
