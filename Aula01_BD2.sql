@@ -10,10 +10,12 @@ CREATE TABLE aluno(
 DROP TABLE aluno;
 
 -- Inserir dados na tabela
-INSERT INTO aluno('VP3029342', 'Carlos Almeida', 20);
+INSERT INTO aluno VALUES('VP3029342', 'Carlos Almeida', 20);
 -- ou inserir em colunas especificas
 INSERT INTO aluno (prontuario, nomeAluno)
             VALUES ('VP3029481', 'João da Silva');
 -- ou
 INSERT INTO aluno (prontuario, idade, nomeAluno)
-            VALUES ('VP3029481', 21, 'João da Silva');
+            VALUES ('VP3029481', 21, 'João da Silva'),
+                   ('VP2032125', 19, 'José Pedro');
+
