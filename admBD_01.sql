@@ -30,5 +30,16 @@ INSERT INTO empregado
 
 SELECT * FROM empregado;
 
+--UNIQUE
+CREATE TABLE aluno(
+	prontuario VARCHAR(15),
+	nome VARCHAR(40),
+	cpf VARCHAR(12),
+	CONSTRAINT pk_aluno PRIMARY KEY (prontuario),
+	CONSTRAINT un_cpf_alu UNIQUE (cpf)
+);
+
+INSERT INTO aluno VALUES ('11AA', 'Rafael', '123.345-55');
+
 
 
