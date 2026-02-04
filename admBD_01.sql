@@ -41,5 +41,25 @@ CREATE TABLE aluno(
 
 INSERT INTO aluno VALUES ('11AA', 'Rafael', '123.345-55');
 
+-- EX2 
+CREATE TABLE correntista(
+	cpf INTEGER NOT NULL,
+	nome VARCHAR(50) NOT NULL,
+	data_nasc DATE NOT NULL,
+	cidade VARCHAR(30),
+	uf VARCHAR(3),
+	CONSTRAINT pk_correntista PRIMARY KEY (cpf),
+	CONSTRAINT chk_idade_correntista
+			CHECK ((CURRENT_DATE - data_nasc)/365 >=18)
+);
+
+CREATE TABLE conta_corrente(
+	numConta INTEGER NOT NULL,
+	cpf_correntista INTEGER NOT NULL,
+	saldo REAL,
+	CONSTRAINT pk_conta_corrente PRIMARY KEY (numConta),
+	CONSTRAINT fk_conta_correntista FOREIGN KEY (cpf_correntista) REFERENCES correntista,
+	CONSTRAINT chk_saldo_corrente CHECK (saldo> 500)
+);
 
 
