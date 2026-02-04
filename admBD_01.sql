@@ -62,4 +62,14 @@ CREATE TABLE conta_corrente(
 	CONSTRAINT chk_saldo_corrente CHECK (saldo> 500)
 );
 
+--EX3
+CREATE TABLE livro(
+	idLivro INTEGER NOT NULL,
+	titulo VARCHAR(50) NOT NULL,
+	ISBN VARCHAR(20),
+	dtaPublic DATE,
+	CONSTRAINT pk_livro PRIMARY KEY (idLivro),
+	CONSTRAINT un_isbn_livro UNIQUE (ISBN)
+);
+
 
